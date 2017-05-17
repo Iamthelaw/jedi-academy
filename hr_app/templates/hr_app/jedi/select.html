@@ -1,0 +1,13 @@
+{% extends 'hr_app/base.html' %}
+
+{% block title %}Выберите себя из списка{% endblock %}
+
+{% block content %}
+    {% include 'hr_app/blocks/error.html' %}
+    <form action='{% url "hr:jedi:select" %}', method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit' class='btn btn-primary'>Далее</button>
+    </form>
+{% endblock %}
+

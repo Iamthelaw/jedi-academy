@@ -1,0 +1,22 @@
+{% extends 'hr_app/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Джедай</th>
+                <th>Падаваны (количество)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in objects %}
+            <tr>
+                <td>{{ object.0 }}</td>
+                <td>{{ object.1 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

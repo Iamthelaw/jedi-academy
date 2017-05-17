@@ -1,0 +1,33 @@
+{% extends 'hr_app/base.html' %}
+
+{% block title %}Кандидат {{ object }}{% endblock %}
+
+{% block content %}
+    <h3>Общая информация</h3>
+    <table class='table'>
+        <tr>
+            <th>Планета</th>
+            <td>{{ object.planet }}</td>
+        </tr>
+        <tr>
+            <th>Возраст</th>
+            <td>{{ object.age }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ object.email }}</td>
+        </tr>
+    </table>
+    <hr>
+    <h3>Ответы на вопросы</h3>
+    <table class='table'>
+        {% for answer in object.answer_set.all %}
+            <tr>
+                <th>{{ answer.question.text }}</th>
+                <td>{{ answer.answer }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a class='btn btn-primary' href='{% url "hr:jedi:take" jedi_pk object.pk %}'>Принять на обучение</a>
+{% endblock %}
+

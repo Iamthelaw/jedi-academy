@@ -1,0 +1,12 @@
+{% extends 'hr_app/base.html' %}
+
+{% block title %}Заполните персональные данные{% endblock %}
+
+{% block content %}
+    {% include 'hr_app/blocks/error.html' %}
+    <form action='{% url "hr:candidate:new" %}', method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit' class='btn btn-primary'>Далее</button>
+    </form>
+{% endblock %}

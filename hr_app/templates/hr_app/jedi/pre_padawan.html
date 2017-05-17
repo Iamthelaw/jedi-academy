@@ -1,0 +1,18 @@
+{% extends 'hr_app/base.html' %}
+
+{% block title %}Список кандидатов прошедших тест, но еще не ставших падаванами{% endblock %}
+
+{% block content %}
+    <section>
+        <ul class='list-unstyled'>
+            {% for object in objects %}
+                <li>
+                    <a href='{{ object.get_absolute_url }}'>{{ object }}</a>
+                </li>
+            {% empty %}
+                <p class='lead'>На данный момент таких кандидатов нет</p>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
+
