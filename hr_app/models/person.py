@@ -38,7 +38,7 @@ class Jedi(models.Model):
         help_text=_('Планета на которой джедай обучает кандидатов'))
 
     def add_padawan(self, candidate):
-        _, created = Padawan.objects.get_or_create(
+        pdw, created = Padawan.objects.get_or_create(
             jedi=self, candidate=candidate)
         if created:
             candidate.is_padawan = True
