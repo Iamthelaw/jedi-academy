@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&yc8-u&#na9rao3bwypuy4%8k_c^7h_*45#n$p!cpqfon_!0f$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jedi-academy.herokuapp.com']
 
 
 # Application definition
